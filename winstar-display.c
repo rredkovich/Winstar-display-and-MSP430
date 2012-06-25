@@ -1,8 +1,13 @@
+#include "winstar-display.h"
+//Похоже задание DB в виде массива было ошибкой, так как оба члена должны
+//быть типа массива, а по факту первый - ссылка на PxOUT, второй целое число.
+//нужно переделать DB в структуры.
+//
 void run (readWrite *rw){
-	*(rw->port)  |= rw->E;
+	*(rw->port) |= rw->E;
 	DELAY_MS (250);
 	*(rw->port) &= ~rw->E;
-};
+}
 	
 void initialize (dataBus *db, readWrite *rw){
 	

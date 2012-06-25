@@ -1,6 +1,10 @@
 #include <msp430.h>
 #include "winstar-display.h"
 
+//Похоже задание DB в виде массива было ошибкой, так как оба члена должны
+//быть типа массива, а по факту первый - ссылка на PxOUT, второй целое число.
+//нужно переделать DB в структуры.
+//
 
 int main () {
 	
@@ -8,13 +12,13 @@ int main () {
 	BCSCTL1 = CALBC1_8MHZ;		//Frequency have been set
 	DCOCTL = CALDCO_8MHZ;		//Frequency have been set
 	
-	struct dataBus db;
-	struct readWrite rw;
+	dataBus db;
+	readWrite rw;
 	
 	
 	//задаем dataBus
 	db.DB0[0] = &P1OUT;
-	db.DB0[1] = BIT0;
+	db.DB0[1] = &BIT0;
 	
 	db.DB1[0] = &P2OUT;
 	db.DB1[1] = BIT1;
