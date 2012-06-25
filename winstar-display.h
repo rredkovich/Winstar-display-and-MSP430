@@ -2,6 +2,7 @@
 #define WINSTARDISPLAY_H_
 
 #include "delay.h"
+#include <stdint.h>
 
 //data bus structure
 	typedef struct {		
