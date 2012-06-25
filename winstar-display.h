@@ -1,6 +1,8 @@
 #ifndef WINSTARDISPLAY_H_
 #define WINSTARDISPLAY_H_
 
+#include "delay.h"
+
 //data bus structure
 	typedef struct {		
 		uint8_t DB0;
@@ -12,7 +14,7 @@
 		uint8_t DB6;
 		uint8_t DB7;
 		volatile uint8_t *port;
-	} data_bus;
+	} dataBus;
 	
 //read-write properties structure
 	typedef struct {	 
@@ -20,10 +22,12 @@
 		uint8_t RW;
 		uint8_t E;
 		volatile uint8_t *port;
-	} rw;
+	} readWrite;
 		
 //Run command
-	void run ();	
+	void run (readWrite *rw);
+	void initialize (dataBus *db, readWrite *rw);
+		
 		
 
 
