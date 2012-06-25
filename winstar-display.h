@@ -5,15 +5,15 @@
 
 //data bus structure
 	typedef struct {		
-		uint8_t DB0;
-		uint8_t DB1;
-		uint8_t DB2;
-		uint8_t DB3;
-		uint8_t DB4;
-		uint8_t DB5;
-		uint8_t DB6;
-		uint8_t DB7;
-		volatile uint8_t *port;
+		uint8_t *DB0[2]; //where DB0[1]=&PxOUT DB0[2]=BITx
+		uint8_t *DB1[2];
+		uint8_t *DB2[2];
+		uint8_t *DB3[2];
+		uint8_t *DB4[2];
+		uint8_t *DB5[2];
+		uint8_t *DB6[2];
+		uint8_t *DB7[2];
+		//volatile uint8_t *port;
 	} dataBus;
 	
 //read-write properties structure

@@ -11,14 +11,14 @@ void initialize (dataBus *db, readWrite *rw){
 		//function set
 			*(rw->port) &= ~rw->RS; 	// эта хрень делает на ноге RS нуль
 			*(rw->port) &= ~rw->RW;
-			*(db->port) &= ~db->DB7;
-			*(db->port) &= ~db->DB6;
-			*(db->port) |= db->DB5;	//а эта хрень делает на ноге DB5 единицу
-			*(db->port) |= db->DB4;
-			*(db->port) |= db->DB3;
-			*(db->port) |= db->DB2;
-			*(db->port) |= db->DB1; 	//russian font
-			*(db->port) &= ~DB0;	//russian font
+			*(db->DB7[0]) &= ~db->DB7[1];
+			*(db->DB6[0]) &= ~db->DB6[1];
+			*(db->DB5[0]) |= db->DB5[1];	//а эта хрень делает на ноге DB5 единицу
+			*(db->DB4[0]) |= db->DB4[1];
+			*(db->DB3[0]) |= db->DB3[1];
+			*(db->DB2[0]) |= db->DB2[1];
+			*(db->DB1[0]) |= db->DB1[1]; 	//russian font
+			*(db->DB0[0]) &= ~db->DB0[1];	//russian font
 			
 			//read command
 			void run (readWrite *rw);
@@ -26,14 +26,14 @@ void initialize (dataBus *db, readWrite *rw){
 		//Display on/off
 			*(rw->port) &= ~rw->RS;
 			*(rw->port) &= ~rw->RW;
-			*(db->port) &= ~db->DB7;
-			*(db->port) &= ~db->DB6;
-			*(db->port) &= ~db->DB5;
-			*(db->port) &= ~db->DB4;
-			*(db->port) |= db->DB3;
-			*(db->port) |= db->DB2;
-			*(db->port) |= db->DB1;
-			*(db->port) |= db->DB0;
+			*(db->DB7[0]) &= ~db->DB7[1];
+			*(db->DB6[0]) &= ~db->DB6[1];
+			*(db->DB5[0]) &= ~db->DB5[1];	//а эта хрень делает на ноге DB5 единицу
+			*(db->DB4[0]) &= ~db->DB4[1];
+			*(db->DB3[0]) |= db->DB3[1];
+			*(db->DB2[0]) |= db->DB2[1];
+			*(db->DB1[0]) |= db->DB1[1]; 	//russian font
+			*(db->DB0[0]) |= db->DB0[1];
 			
 			void run (readWrite *rw);
 			
@@ -42,14 +42,14 @@ void initialize (dataBus *db, readWrite *rw){
 		//Display clear
 			*(rw->port) &= ~rw->RS;
 			*(rw->port) &= ~rw->RW;
-			*(db->port) &= ~db->DB7;
-			*(db->port) &= ~db->DB6;
-			*(db->port) &= ~db->DB5;
-			*(db->port) &= ~db->DB4;
-			*(db->port) &= ~db->DB3;
-			*(db->port) &= ~db->DB2;
-			*(db->port) &= ~db->DB1;
-			*(db->port) |= db->DB0;
+			*(db->DB7[0]) &= ~db->DB7[1];
+			*(db->DB6[0]) &= ~db->DB6[1];
+			*(db->DB5[0]) &= ~db->DB5[1];	//а эта хрень делает на ноге DB5 единицу
+			*(db->DB4[0]) &= ~db->DB4[1];
+			*(db->DB3[0]) &= ~db->DB3[1];
+			*(db->DB2[0]) &= ~db->DB2[1];
+			*(db->DB1[0]) &= ~db->DB1[1]; 	//russian font
+			*(db->DB0[0]) |= db->DB0[1];
 			
 			void run (readWrite *rw);
 		
@@ -58,14 +58,14 @@ void initialize (dataBus *db, readWrite *rw){
 		//Entry mode set
 			*(rw->port) &= ~rw->RS;
 			*(rw->port) &= ~rw->RW;
-			*(db->port) &= ~db->DB7;
-			*(db->port) &= ~db->DB6;
-			*(db->port) &= ~db->DB5;
-			*(db->port) &= ~db->DB4;
-			*(db->port) &= ~db->DB3;
-			*(db->port) |= db->DB2;
-			*(db->port) |= db->DB1;
-			*(db->port) &= ~db->DB0;
+			*(db->DB7[0]) &= ~db->DB7[1];
+			*(db->DB6[0]) &= ~db->DB6[1];
+			*(db->DB5[0]) &= ~db->DB5[1];	//а эта хрень делает на ноге DB5 единицу
+			*(db->DB4[0]) &= ~db->DB4[1];
+			*(db->DB3[0]) &= ~db->DB3[1];
+			*(db->DB2[0]) |= db->DB2[1];
+			*(db->DB1[0]) |= db->DB1[1]; 	//russian font
+			*(db->DB0[0]) &= ~db->DB0[1];
 			
 			void run (readWrite *rw);
 			
