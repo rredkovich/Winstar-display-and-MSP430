@@ -1,4 +1,8 @@
-void run (rw *rwImplementation);
+void run (readWrite *rw){
+	*(rw->port)  |= rw->E;
+	DELAY_MS (250);
+	*(rw->port) &= ~rw->E;
+};
 	
 void initialize (dataBus *db, readWrite *rw){
 	
@@ -17,9 +21,7 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->port) &= ~DB0;	//russian font
 			
 			//read command
-			void run ();
-	
-	//DELAY_MS (10);			//задержка в мс
+			void run (readWrite *rw);
 	
 		//Display on/off
 			P2OUT &= ~RS;
@@ -33,10 +35,7 @@ void initialize (dataBus *db, readWrite *rw){
 			P2OUT |= DB1;
 			P1OUT |= DB0;
 			
-			//read command
-			P2OUT  |= E;
-			DELAY_MS (250);
-			P2OUT &= ~E;
+			void run (readWrite *rw);
 			
 	//DELAY_MS (10);
 	
@@ -52,10 +51,7 @@ void initialize (dataBus *db, readWrite *rw){
 			P2OUT &= ~DB1;
 			P1OUT |= DB0;
 			
-			//read command
-			P2OUT  |= E;
-			DELAY_MS (250);
-			P2OUT &= ~E;
+			void run (readWrite *rw);
 		
 		DELAY_MS (8);
 			
@@ -71,10 +67,7 @@ void initialize (dataBus *db, readWrite *rw){
 			P2OUT |= DB1;
 			P1OUT &= ~DB0;
 			
-			//read command
-			P2OUT  |= E;
-			DELAY_MS (250);
-			P2OUT &= ~E;
+			void run (readWrite *rw);
 			
 		//DELAY_MS (10);
 }
