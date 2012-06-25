@@ -24,48 +24,48 @@ void initialize (dataBus *db, readWrite *rw){
 			void run (readWrite *rw);
 	
 		//Display on/off
-			P2OUT &= ~RS;
-			P2OUT &= ~RW;
-			P1OUT &= ~DB7;
-			P1OUT &= ~DB6;
-			P1OUT &= ~DB5;
-			P1OUT &= ~DB4;
-			P1OUT |= DB3;
-			P2OUT |= DB2;
-			P2OUT |= DB1;
-			P1OUT |= DB0;
+			*(rw->port) &= ~rw->RS;
+			*(rw->port) &= ~rw->RW;
+			*(db->port) &= ~db->DB7;
+			*(db->port) &= ~db->DB6;
+			*(db->port) &= ~db->DB5;
+			*(db->port) &= ~db->DB4;
+			*(db->port) |= db->DB3;
+			*(db->port) |= db->DB2;
+			*(db->port) |= db->DB1;
+			*(db->port) |= db->DB0;
 			
 			void run (readWrite *rw);
 			
 	//DELAY_MS (10);
 	
 		//Display clear
-			P2OUT &= ~RS;
-			P2OUT &= ~RW;
-			P1OUT &= ~DB7;
-			P1OUT &= ~DB6;
-			P1OUT &= ~DB5;
-			P1OUT &= ~DB4;
-			P1OUT &= ~DB3;
-			P2OUT &= ~DB2;
-			P2OUT &= ~DB1;
-			P1OUT |= DB0;
+			*(rw->port) &= ~rw->RS;
+			*(rw->port) &= ~rw->RW;
+			*(db->port) &= ~db->DB7;
+			*(db->port) &= ~db->DB6;
+			*(db->port) &= ~db->DB5;
+			*(db->port) &= ~db->DB4;
+			*(db->port) &= ~db->DB3;
+			*(db->port) &= ~db->DB2;
+			*(db->port) &= ~db->DB1;
+			*(db->port) |= db->DB0;
 			
 			void run (readWrite *rw);
 		
 		DELAY_MS (8);
 			
 		//Entry mode set
-			P2OUT &= ~RS;
-			P2OUT &= ~RW;
-			P1OUT &= ~DB7;
-			P1OUT &= ~DB6;
-			P1OUT &= ~DB5;
-			P1OUT &= ~DB4;
-			P1OUT &= ~DB3;
-			P2OUT |= DB2;
-			P2OUT |= DB1;
-			P1OUT &= ~DB0;
+			*(rw->port) &= ~rw->RS;
+			*(rw->port) &= ~rw->RW;
+			*(db->port) &= ~db->DB7;
+			*(db->port) &= ~db->DB6;
+			*(db->port) &= ~db->DB5;
+			*(db->port) &= ~db->DB4;
+			*(db->port) &= ~db->DB3;
+			*(db->port) |= db->DB2;
+			*(db->port) |= db->DB1;
+			*(db->port) &= ~db->DB0;
 			
 			void run (readWrite *rw);
 			
