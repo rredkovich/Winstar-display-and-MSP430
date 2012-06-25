@@ -2,7 +2,6 @@
 #define WINSTARDISPLAY_H_
 
 #include "delay.h"
-#include <stdint.h>
 
 //comment for test of reverting in github
 
