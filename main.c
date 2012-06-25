@@ -43,5 +43,8 @@ int main () {
 	rw.E = BIT3;
 	rw.port = &P2OUT;
 	
+	initialize (&db, &rw);
 	
+	while(1);
+		
 };
