@@ -31,6 +31,8 @@ void initialize (dataBus *db, readWrite *rw){
 			DELAY_MS (250);
 			*(rw->port) &= ~rw->E;
 			
+			DELAY_MS(10);
+			
 		//Display on/off
 			*(rw->port) &= ~rw->RS;
 			*(rw->port) &= ~rw->RW;
@@ -48,7 +50,7 @@ void initialize (dataBus *db, readWrite *rw){
 			DELAY_MS (250);
 			*(rw->port) &= ~rw->E;
 			
-	//DELAY_MS (10);
+	DELAY_MS (10);
 	
 		//Display clear
 			*(rw->port) &= ~rw->RS;
@@ -68,7 +70,7 @@ void initialize (dataBus *db, readWrite *rw){
 			*(rw->port) &= ~rw->E;
 			
 			
-		DELAY_MS (8);
+		DELAY_MS (10);
 			
 		//Entry mode set
 			*(rw->port) &= ~rw->RS;
@@ -87,5 +89,5 @@ void initialize (dataBus *db, readWrite *rw){
 			DELAY_MS (250);
 			*(rw->port) &= ~rw->E;
 			
-		//DELAY_MS (10);
+		DELAY_MS (10);
 }
