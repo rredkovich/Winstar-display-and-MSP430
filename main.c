@@ -17,29 +17,29 @@ int main () {
 	
 	
 	//задаем dataBus
-	db.DB0[0] = &P1OUT;
-	db.DB0[1] = &BIT0;
+	db.DB0.port = &P1OUT;
+	db.DB0.pin = BIT0;
 	
-	db.DB1[0] = &P2OUT;
-	db.DB1[1] = BIT1;
+	db.DB1.port = &P2OUT;
+	db.DB1.pin = BIT1;
 	
-	db.DB2[0] = &P2OUT;
-	db.DB2[1] = BIT2;
+	db.DB2.port = &P2OUT;
+	db.DB2.pin = BIT2;
 	
-	db.DB3[0] = &P1OUT;
-	db.DB3[1] = BIT3;
+	db.DB3.port = &P1OUT;
+	db.DB3.pin = BIT3;
 	
-	db.DB4[0] = &P1OUT;
-	db.DB4[1] = BIT4;
+	db.DB4.port = &P1OUT;
+	db.DB4.pin = BIT4;
 	
-	db.DB5[0] = &P1OUT;
-	db.DB5[1] = BIT5;
+	db.DB5.port = &P1OUT;
+	db.DB5.pin = BIT5;
 	
-	db.DB6[0] = &P1OUT;
-	db.DB6[1] = BIT6;
+	db.DB6.port = &P1OUT;
+	db.DB6.pin = BIT6;
 	
-	db.DB7[0] = &P1OUT;
-	db.DB7[1] = BIT7;
+	db.DB7.port = &P1OUT;
+	db.DB7.pin = BIT7;
 
 	//задаем readWrite
 	rw.RS = BIT5;
