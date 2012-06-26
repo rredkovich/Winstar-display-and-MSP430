@@ -25,8 +25,8 @@
 	
 //read-write properties structure
 	typedef struct {	 
-		volatile uint8_t RS;
-		volatile uint8_t RW;
+		int RS;
+		int RW;
 		int E;
 		volatile uint8_t *port;
 	} readWrite;

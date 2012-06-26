@@ -12,11 +12,18 @@ int main () {
 	BCSCTL1 = CALBC1_8MHZ;		//Frequency have been set
 	DCOCTL = CALDCO_8MHZ;		//Frequency have been set
 	
+	P1SEL = 0x0; //P1 to digital I/O function
+	P2SEL = 0x0; //P2 to digital I/O function
+	
+	P1DIR = 0xFF; //P1 to out
+	P2DIR = 0xFF; //P2 to out
+	
+	
 	dataBus db;
 	readWrite rw;
 	
 	
-	//задаем dataBus
+	//dataBus pins
 	db.DB0.port = &P1OUT;
 	db.DB0.pin = BIT0;
 	
@@ -41,13 +48,29 @@ int main () {
 	db.DB7.port = &P1OUT;
 	db.DB7.pin = BIT7;
 
-	//задаем readWrite
+	//readWrite port and pins
 	rw.RS = BIT5;
 	rw.RW = BIT4;
 	rw.E = BIT3;
 	rw.port = &P2OUT;
 	
 	initialize (&db, &rw);
+	
+	//try display ? sign
+	*(rw.port) |= rw.RS;
+	*(rw.port) &= ~rw.RW;
+	*(db.DB7.port) &= ~db.DB7.pin;
+	*(db.DB6.port) &= ~db.DB6.pin;
+	*(db.DB5.port) |= db.DB5.pin;
+	*(db.DB4.port) |= db.DB4.pin;
+	*(db.DB3.port) |= db.DB3.pin;
+	*(db.DB2.port) |= db.DB2.pin;
+	*(db.DB1.port) |= db.DB1.pin;
+	*(db.DB0.port) |= db.DB0.pin;				
+	
+	run (&rw);
+			
+
 	
 	while(1);
 		

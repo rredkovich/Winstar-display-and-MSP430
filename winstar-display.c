@@ -26,8 +26,11 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->DB0.port) &= ~db->DB0.pin;	//russian font
 			
 			//read command
-			void run (readWrite *rw);
-	
+			//run (&rw); I don't find why this don't work
+			*(rw->port) |= rw->E;
+			DELAY_MS (250);
+			*(rw->port) &= ~rw->E;
+			
 		//Display on/off
 			*(rw->port) &= ~rw->RS;
 			*(rw->port) &= ~rw->RW;
@@ -40,7 +43,10 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->DB1.port) |= db->DB1.pin; 	//russian font
 			*(db->DB0.port) |= db->DB0.pin;
 			
-			void run (readWrite *rw);
+			//run (&rw);
+			*(rw->port) |= rw->E;
+			DELAY_MS (250);
+			*(rw->port) &= ~rw->E;
 			
 	//DELAY_MS (10);
 	
@@ -56,8 +62,12 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->DB1.port) &= ~db->DB1.pin; 	//russian font
 			*(db->DB0.port) |= db->DB0.pin;
 			
-			void run (readWrite *rw);
-		
+			//run (&rw);
+			*(rw->port) |= rw->E;
+			DELAY_MS (250);
+			*(rw->port) &= ~rw->E;
+			
+			
 		DELAY_MS (8);
 			
 		//Entry mode set
@@ -72,7 +82,10 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->DB1.port) |= db->DB1.pin; 	//russian font
 			*(db->DB0.port) &= ~db->DB0.pin;
 			
-			void run (readWrite *rw);
+			//run (&rw);
+			*(rw->port) |= rw->E;
+			DELAY_MS (250);
+			*(rw->port) &= ~rw->E;
 			
 		//DELAY_MS (10);
 }
