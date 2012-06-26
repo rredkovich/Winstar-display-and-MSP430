@@ -5,17 +5,22 @@
 #include <stdint.h>
 //comment for test of reverting in github
 
+//DBx pin structure
+	typedef struct {
+		volatile uint8_t *port;
+		int pin;
+	} DBx;
+	
 //data bus structure
 	typedef struct {		
-		volatile uint8_t *DB0[2]; //where DB0[1]=&PxOUT DB0[2]=BITx
-		volatile uint8_t *DB1[2];
-		volatile uint8_t *DB2[2];
-		volatile uint8_t *DB3[2];
-		volatile uint8_t *DB4[2];
-		volatile uint8_t *DB5[2];
-		volatile uint8_t *DB6[2];
-		volatile uint8_t *DB7[2];
-		//volatile uint8_t *port;
+		DBx DB0;
+		DBx DB1;
+		DBx DB2;
+		DBx DB3;
+		DBx DB4;
+		DBx DB5;
+		DBx DB6;
+		DBx DB7;			
 	} dataBus;
 	
 //read-write properties structure
