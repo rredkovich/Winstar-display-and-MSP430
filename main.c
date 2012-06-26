@@ -70,7 +70,19 @@ int main () {
 	
 	run (&rw);
 			
-
+	//Display Я/Ю
+	*(rw.port) |= rw.RS;
+	*(rw.port) &= ~rw.RW;
+	*(db.DB7.port) |= db.DB7.pin;
+	*(db.DB6.port) &= ~db.DB6.pin;
+	*(db.DB5.port) |= db.DB5.pin;
+	*(db.DB4.port) |= db.DB4.pin;
+	*(db.DB3.port) &= ~db.DB3.pin;
+	*(db.DB2.port) &= ~db.DB2.pin;
+	*(db.DB1.port) &= ~db.DB1.pin;
+	*(db.DB0.port) &= ~db.DB0.pin;	
+	
+	run (&rw);
 	
 	while(1);
 		
