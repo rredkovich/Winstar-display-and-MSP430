@@ -5,24 +5,27 @@
 #include <stdint.h>
 //comment for test of reverting in github
 
-//DBx pin structure
+//busWire pin structure
 	typedef struct {
 		volatile uint8_t *port;
 		int pin;
-	} DBx;
+	} busWire;
 	
 //data bus structure
 	typedef struct {		
-		DBx DB0;
-		DBx DB1;
-		DBx DB2;
-		DBx DB3;
-		DBx DB4;
-		DBx DB5;
-		DBx DB6;
-		DBx DB7;			
+		busWire RS;
+		busWire RW;
+		busWire E;
+		busWire DB0;
+		busWire DB1;
+		busWire DB2;
+		busWire DB3;
+		busWire DB4;
+		busWire DB5;
+		busWire DB6;
+		busWire DB7;
 	} dataBus;
-	
+/*	
 //read-write properties structure
 	typedef struct {	 
 		int RS;
@@ -30,10 +33,10 @@
 		int E;
 		volatile uint8_t *port;
 	} readWrite;
-		
+		*/
 //Run command
-	void run (readWrite *rw);
-	void initialize (dataBus *db, readWrite *rw);
+	void run (dataBus *db);
+	void initialize (dataBus *db);
 		
 		
 

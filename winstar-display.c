@@ -1,19 +1,19 @@
 #include "winstar-display.h"
 
 
-void run (readWrite *rw){
-	*(rw->port) |= rw->E;
+void run (dataBus *db){
+	*(db->E.port) |= db->E.pin;
 	DELAY_MS (250);
-	*(rw->port) &= ~rw->E;
+	*(db->E.port) &= ~db->E.pin;
 }
 	
-void initialize (dataBus *db, readWrite *rw){
+void initialize (dataBus *db, dataBus *db){
 	
 
 //initalization
 		//function set
-			*(rw->port) &= ~rw->RS; 	// эта хрень делает на ноге RS нуль
-			*(rw->port) &= ~rw->RW;
+			*(db->RS.port) &= ~db->RS.pin; 	// эта хрень делает на ноге RS нуль
+			*(db->RW.port) &= ~db->RW.pin;
 			*(db->DB7.port) &= ~db->DB7.pin;
 			*(db->DB6.port) &= ~db->DB6.pin;
 			*(db->DB5.port) |= db->DB5.pin;	//а эта хрень делает на ноге DB5 единицу
@@ -24,16 +24,16 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->DB0.port) &= ~db->DB0.pin;	//russian font
 			
 			//read command
-			//run (&rw); I don't find why this don't work
-			*(rw->port) |= rw->E;
+			//run (&db); I don't find why this don't work
+			*(db->E.port) |= db->E.pin;
 			DELAY_MS (250);
-			*(rw->port) &= ~rw->E;
+			*(db->E.port) &= ~db->E.pin;
 			
 			DELAY_MS(10);
 			
 		//Display on/off
-			*(rw->port) &= ~rw->RS;
-			*(rw->port) &= ~rw->RW;
+			*(db->RS.port) &= ~db->RS.pin;
+			*(db->RW.port) &= ~db->RW.pin;
 			*(db->DB7.port) &= ~db->DB7.pin;
 			*(db->DB6.port) &= ~db->DB6.pin;
 			*(db->DB5.port) &= ~db->DB5.pin;	//а эта хрень делает на ноге DB5 единицу
@@ -43,16 +43,16 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->DB1.port) |= db->DB1.pin; 	//russian font
 			*(db->DB0.port) |= db->DB0.pin;
 			
-			//run (&rw);
-			*(rw->port) |= rw->E;
+			//run (&db);
+			*(db->E.port) |= db->E.pin;
 			DELAY_MS (250);
-			*(rw->port) &= ~rw->E;
+			*(db->E.port) &= ~db->E.pin;
 			
 	DELAY_MS (10);
 	
 		//Display clear
-			*(rw->port) &= ~rw->RS;
-			*(rw->port) &= ~rw->RW;
+			*(db->RS.port) &= ~db->RS.pin;
+			*(db->RW.port) &= ~db->RW.pin;
 			*(db->DB7.port) &= ~db->DB7.pin;
 			*(db->DB6.port) &= ~db->DB6.pin;
 			*(db->DB5.port) &= ~db->DB5.pin;	//а эта хрень делает на ноге DB5 единицу
@@ -62,17 +62,17 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->DB1.port) &= ~db->DB1.pin; 	//russian font
 			*(db->DB0.port) |= db->DB0.pin;
 			
-			//run (&rw);
-			*(rw->port) |= rw->E;
+			//run (&db);
+			*(db->E.port) |= db->E.pin;
 			DELAY_MS (250);
-			*(rw->port) &= ~rw->E;
+			*(db->E.port) &= ~db->E.pin;
 			
 			
 		DELAY_MS (10);
 			
 		//Entry mode set
-			*(rw->port) &= ~rw->RS;
-			*(rw->port) &= ~rw->RW;
+			*(db->RS.port) &= ~db->RS.pin;
+			*(db->RW.port) &= ~db->RW.pin;
 			*(db->DB7.port) &= ~db->DB7.pin;
 			*(db->DB6.port) &= ~db->DB6.pin;
 			*(db->DB5.port) &= ~db->DB5.pin;	//а эта хрень делает на ноге DB5 единицу
@@ -82,10 +82,10 @@ void initialize (dataBus *db, readWrite *rw){
 			*(db->DB1.port) |= db->DB1.pin; 	//russian font
 			*(db->DB0.port) &= ~db->DB0.pin;
 			
-			//run (&rw);
-			*(rw->port) |= rw->E;
+			//run (&db);
+			*(db->E.port) |= db->E.pin;
 			DELAY_MS (250);
-			*(rw->port) &= ~rw->E;
+			*(db->E.port) &= ~db->E.pin;
 			
 		DELAY_MS (10);
 }

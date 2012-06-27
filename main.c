@@ -20,10 +20,18 @@ int main () {
 	
 	
 	dataBus db;
-	readWrite rw;
 	
 	
 	//dataBus pins
+	db.RS.port = &P2OUT;
+	db.RS.pin = BIT5;
+
+	db.RW.port = &P2OUT;
+	db.RW.pin = BIT4;
+
+	db.E.port = &P2OUT;
+	db.E.pin = BIT3;
+
 	db.DB0.port = &P1OUT;
 	db.DB0.pin = BIT0;
 	
@@ -48,17 +56,12 @@ int main () {
 	db.DB7.port = &P1OUT;
 	db.DB7.pin = BIT7;
 
-	//readWrite port and pins
-	rw.RS = BIT5;
-	rw.RW = BIT4;
-	rw.E = BIT3;
-	rw.port = &P2OUT;
-	
-	initialize (&db, &rw);
+
+	initialize (&db);
 	
 	//try display ? sign
-	*(rw.port) |= rw.RS;
-	*(rw.port) &= ~rw.RW;
+	*(db.RS.port) |= db.RS.pin;
+	*(db.RW.port) &= ~db.RW.pin;
 	*(db.DB7.port) &= ~db.DB7.pin;
 	*(db.DB6.port) &= ~db.DB6.pin;
 	*(db.DB5.port) |= db.DB5.pin;
@@ -68,11 +71,11 @@ int main () {
 	*(db.DB1.port) |= db.DB1.pin;
 	*(db.DB0.port) |= db.DB0.pin;				
 	
-	run (&rw);
+	run (&db);
 			
 	//Display Я/Ю
-	*(rw.port) |= rw.RS;
-	*(rw.port) &= ~rw.RW;
+	*(db.RS.port) |= db.RS.pin;
+	*(db.RW.port) &= ~db.RW.pin;
 	*(db.DB7.port) |= db.DB7.pin;
 	*(db.DB6.port) &= ~db.DB6.pin;
 	*(db.DB5.port) |= db.DB5.pin;
@@ -82,7 +85,7 @@ int main () {
 	*(db.DB1.port) &= ~db.DB1.pin;
 	*(db.DB0.port) &= ~db.DB0.pin;	
 	
-	run (&rw);
+	run (&db);
 	
 	while(1);
 		
