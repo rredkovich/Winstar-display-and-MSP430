@@ -22,7 +22,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_NAME" value="E:\Github\Winstar-display-and-MSP430\Debug\Winstar-display-and-MSP430.out"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="Winstar-display-and-MSP430"/>
 <stringAttribute key="CCEDebugOptions.CPU_NAME" value="TI MSP430 USB1/MSP430"/>
-<stringAttribute key="com.ti.ccstudio.debug.core.MRU_MODULES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;modules&gt;&#13;&#10;&lt;module name=&quot;E:\Github\Winstar-display-and-MSP430\Debug\Winstar-display-and-MSP430.out&quot; time=&quot;Wed Jun 27 11:07:43 MSD 2012&quot; time_long=&quot;1340780863998&quot;/&gt;&#13;&#10;&lt;/modules&gt;&#13;&#10;"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_MODULES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;modules&gt;&#13;&#10;&lt;module name=&quot;E:\Github\Winstar-display-and-MSP430\Debug\Winstar-display-and-MSP430.out&quot; time=&quot;Wed Jun 27 12:15:33 MSD 2012&quot; time_long=&quot;1340784933763&quot;/&gt;&#13;&#10;&lt;/modules&gt;&#13;&#10;"/>
 <stringAttribute key="org.eclipse.cdt.launch.GLOBAL_VARIABLES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;globalVariableList/&gt;&#13;&#10;"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/Winstar-display-and-MSP430.out"/>
 <stringAttribute key="com.ti.ccstudio.debug.core.BUILD_CONFIGURATION" value="Debug"/>

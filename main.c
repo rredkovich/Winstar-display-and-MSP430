@@ -1,6 +1,5 @@
 #include <msp430.h>
 #include "winstar-display.h"
-#include "winstar-display-symbols.h"
 
 int main () {
 	
@@ -55,7 +54,7 @@ int main () {
 
 	initialize (&db);
 
-	displaySymbol (01010000); //displaying P
+	displaySymbol (&db, 01010000); //displaying P
 
 	/*
 	//try display ? sign
