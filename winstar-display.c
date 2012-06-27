@@ -2,9 +2,11 @@
 
 
 void run (dataBus *db){
+	DELAY_MS(5);
 	*(db->E.port) |= db->E.pin;
 	DELAY_MS (250);
 	*(db->E.port) &= ~db->E.pin;
+	DELAY_MS(5);
 }
 	
 void initialize (dataBus *db){
@@ -21,11 +23,8 @@ void initialize (dataBus *db){
 			*(db->DB1.port) |= db->DB1.pin; 	//russian font
 			*(db->DB0.port) &= ~db->DB0.pin;	//russian font
 			
-			//read command
-			//run (&db); I don't find why this don't work
-			*(db->E.port) |= db->E.pin;
-			DELAY_MS (250);
-			*(db->E.port) &= ~db->E.pin;
+			//run command
+			run (db); 
 			
 			DELAY_MS(10);
 			
@@ -39,12 +38,9 @@ void initialize (dataBus *db){
 			*(db->DB3.port) |= db->DB3.pin;
 			*(db->DB2.port) |= db->DB2.pin;
 			*(db->DB1.port) |= db->DB1.pin; 	//russian font
-			*(db->DB0.port) |= db->DB0.pin;
+			*(db->DB0.port) &= ~db->DB0.pin;	//True - cursor blinks
 			
-			//run (&db);
-			*(db->E.port) |= db->E.pin;
-			DELAY_MS (250);
-			*(db->E.port) &= ~db->E.pin;
+			run (db);
 			
 	DELAY_MS (10);
 	
@@ -60,10 +56,7 @@ void initialize (dataBus *db){
 			*(db->DB1.port) &= ~db->DB1.pin; 	//russian font
 			*(db->DB0.port) |= db->DB0.pin;
 			
-			//run (&db);
-			*(db->E.port) |= db->E.pin;
-			DELAY_MS (250);
-			*(db->E.port) &= ~db->E.pin;
+			run (db);
 			
 			
 		DELAY_MS (10);
@@ -80,12 +73,9 @@ void initialize (dataBus *db){
 			*(db->DB1.port) |= db->DB1.pin; 	//russian font
 			*(db->DB0.port) &= ~db->DB0.pin;
 			
-			//run (&db);
-			*(db->E.port) |= db->E.pin;
-			DELAY_MS (250);
-			*(db->E.port) &= ~db->E.pin;
+			run (db);
 			
-		DELAY_MS (10);
+			DELAY_MS (10);
 };
 
 void displaySymbol (dataBus *db, volatile uint8_t byte) {
@@ -93,31 +83,31 @@ void displaySymbol (dataBus *db, volatile uint8_t byte) {
 	*(db->RS.port) |= db->RS.pin;
 	*(db->RW.port) &= ~db->RW.pin;
 
-	if (byte && 0x80){
+	if (byte & 0x80){
 		*(db->DB7.port) |= db->DB7.pin;
 	} else {
 		*(db->DB7.port) &= ~db->DB7.pin;
 	}
 
-	if (byte && 0x40) {
+	if (byte & 0x40) {
 		*(db->DB6.port) |= db->DB6.pin;
 	} else {
 		*(db->DB6.port) &= ~db->DB6.pin;
 	}
 
-	if (byte && 0x20) {
+	if (byte & 0x20) {
 		*(db->DB5.port) |= db->DB5.pin;
 	} else {
 		*(db->DB5.port) &= ~db->DB5.pin;
 	}
 
-	if (byte && 0x10) {
+	if (byte & 0x10) {
 		*(db->DB4.port) |= db->DB4.pin;
 	} else{
 		*(db->DB4.port) &= ~db->DB4.pin;
 	}
 
-	if (byte && 0x8) {
+	if (byte & 0x8) {
 		*(db->DB3.port) |= db->DB3.pin;
 	} else {
 		*(db->DB3.port) &= ~db->DB3.pin;
@@ -129,18 +119,19 @@ void displaySymbol (dataBus *db, volatile uint8_t byte) {
 		*(db->DB2.port) &= ~db->DB2.pin;
 	}
 
-	if (byte && 0x2) {
+	if (byte & 0x2) {
 		*(db->DB1.port) |= db->DB1.pin;
 	} else {
 		*(db->DB1.port) &= ~db->DB1.pin;
 	}
 
-	if (byte && 0x1) {
+	if (byte & 0x1) {
 		*(db->DB0.port) |= db->DB0.pin;	
 	} else {
 		*(db->DB0.port) &= ~db->DB0.pin;	
 	}
 
 	run (db);
+	DELAY_MS(10);
 
 }

@@ -15,6 +15,7 @@ int main () {
 	P1DIR = 0xFF; //P1 to out
 	P2DIR = 0xFF; //P2 to out
 	
+	DELAY_MS(20);
 	
 	dataBus db;
 	
@@ -57,7 +58,16 @@ int main () {
 	initialize (&db);
 	
 	displaySymbol (&db, 0x50); //displaying P
-
-	while(1);
+	displaySymbol (&db, 0x69); //displaying i
+ 	//displaySymbol (&db, 0x20); //displaying space
+ 	displaySymbol (&db, 0x3d); //displaying =
+ 	//displaySymbol (&db, 0x20); //displaying space
+ 	displaySymbol (&db, 0x33); //displaying 3
+ 	displaySymbol (&db, 0xd); //displaying .
+ 	displaySymbol (&db, 0x31); //displaying 1
+ 	displaySymbol (&db, 0x34); //displaying 4
+ 	
+ 	//_BIS_SR(LPM0_bits + GIE);
+	while(1){};
 		
 };
