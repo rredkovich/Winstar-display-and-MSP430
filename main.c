@@ -1,11 +1,6 @@
 #include <msp430.h>
 #include "winstar-display.h"
 
-//Похоже задание DB в виде массива было ошибкой, так как оба члена должны
-//быть типа массива, а по факту первый - ссылка на PxOUT, второй целое число.
-//нужно переделать DB в структуры.
-//
-
 int main () {
 	
 	WDTCTL = WDTPW + WDTHOLD; 	//Stop watchdog timer
