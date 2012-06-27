@@ -7,7 +7,7 @@ void run (dataBus *db){
 	*(db->E.port) &= ~db->E.pin;
 }
 	
-void initialize (dataBus *db, dataBus *db){
+void initialize (dataBus *db){
 	
 
 //initalization
