@@ -1,5 +1,6 @@
 #include <msp430.h>
 #include "winstar-display.h"
+#include "winstar-display-symbols.h"
 
 int main () {
 	
@@ -53,7 +54,10 @@ int main () {
 
 
 	initialize (&db);
-	
+
+	displaySymbol (01010000); //displaying P
+
+	/*
 	//try display ? sign
 	*(db.RS.port) |= db.RS.pin;
 	*(db.RW.port) &= ~db.RW.pin;
@@ -81,7 +85,7 @@ int main () {
 	*(db.DB0.port) &= ~db.DB0.pin;	
 	
 	run (&db);
-	
+	*/
 	while(1);
 		
 };
