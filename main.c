@@ -1,5 +1,7 @@
 #include <msp430.h>
 #include "winstar-display.h"
+#include <stdbool.h>
+
 
 int main () {
 	
@@ -53,38 +55,9 @@ int main () {
 
 
 	initialize (&db);
-
-	displaySymbol (&db, 01010000); //displaying P
-
-	/*
-	//try display ? sign
-	*(db.RS.port) |= db.RS.pin;
-	*(db.RW.port) &= ~db.RW.pin;
-	*(db.DB7.port) &= ~db.DB7.pin;
-	*(db.DB6.port) &= ~db.DB6.pin;
-	*(db.DB5.port) |= db.DB5.pin;
-	*(db.DB4.port) |= db.DB4.pin;
-	*(db.DB3.port) |= db.DB3.pin;
-	*(db.DB2.port) |= db.DB2.pin;
-	*(db.DB1.port) |= db.DB1.pin;
-	*(db.DB0.port) |= db.DB0.pin;				
 	
-	run (&db);
-			
-	//Display Я/Ю
-	*(db.RS.port) |= db.RS.pin;
-	*(db.RW.port) &= ~db.RW.pin;
-	*(db.DB7.port) |= db.DB7.pin;
-	*(db.DB6.port) &= ~db.DB6.pin;
-	*(db.DB5.port) |= db.DB5.pin;
-	*(db.DB4.port) |= db.DB4.pin;
-	*(db.DB3.port) &= ~db.DB3.pin;
-	*(db.DB2.port) &= ~db.DB2.pin;
-	*(db.DB1.port) &= ~db.DB1.pin;
-	*(db.DB0.port) &= ~db.DB0.pin;	
-	
-	run (&db);
-	*/
+	displaySymbol (&db, 0x50); //displaying P
+
 	while(1);
 		
 };

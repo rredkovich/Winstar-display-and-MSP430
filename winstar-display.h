@@ -29,7 +29,7 @@
 //Run command
 	void run (dataBus *db);
 	void initialize (dataBus *db);
-	void displaySymbol (dataBus *db, int byte);
+	void displaySymbol (dataBus *db, volatile uint8_t byte);
 		
 		
 
