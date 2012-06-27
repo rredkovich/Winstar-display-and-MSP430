@@ -25,15 +25,7 @@
 		busWire DB6;
 		busWire DB7;
 	} dataBus;
-/*	
-//read-write properties structure
-	typedef struct {	 
-		int RS;
-		int RW;
-		int E;
-		volatile uint8_t *port;
-	} readWrite;
-		*/
+
 //Run command
 	void run (dataBus *db);
 	void initialize (dataBus *db);
