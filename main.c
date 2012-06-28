@@ -15,7 +15,7 @@ int main () {
 	P1DIR = 0xFF; //P1 to out
 	P2DIR = 0xFF; //P2 to out
 	
-	DELAY_MS(20);
+	//DELAY_MS(20);
 	
 	dataBus db;
 	
@@ -63,7 +63,7 @@ int main () {
  	displaySymbol (&db, 0x3d); //displaying =
  	//displaySymbol (&db, 0x20); //displaying space
  	displaySymbol (&db, 0x33); //displaying 3
- 	displaySymbol (&db, 0xd); //displaying .
+ 	displaySymbol (&db, 0xd0); //displaying .
  	displaySymbol (&db, 0x31); //displaying 1
  	displaySymbol (&db, 0x34); //displaying 4
  	

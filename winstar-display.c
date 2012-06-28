@@ -2,11 +2,11 @@
 
 
 void run (dataBus *db){
-	DELAY_MS(5);
+	DELAY_MS(50);
 	*(db->E.port) |= db->E.pin;
-	DELAY_MS (250);
-	*(db->E.port) &= ~db->E.pin;
-	DELAY_MS(5);
+	DELAY_US (10);
+	*(db->E.port) &= ~(db->E.pin);
+	//DELAY_MS(100);
 }
 	
 void initialize (dataBus *db){
@@ -28,7 +28,7 @@ void initialize (dataBus *db){
 			
 			DELAY_MS(10);
 			
-		//Display on/off
+	//Display on/off
 			*(db->RS.port) &= ~db->RS.pin;
 			*(db->RW.port) &= ~db->RW.pin;
 			*(db->DB7.port) &= ~db->DB7.pin;
@@ -37,13 +37,13 @@ void initialize (dataBus *db){
 			*(db->DB4.port) &= ~db->DB4.pin;
 			*(db->DB3.port) |= db->DB3.pin;
 			*(db->DB2.port) |= db->DB2.pin;
-			*(db->DB1.port) |= db->DB1.pin; 	//russian font
+			*(db->DB1.port) &= ~db->DB1.pin; 	//cursor on/off
 			*(db->DB0.port) &= ~db->DB0.pin;	//True - cursor blinks
 			
 			run (db);
 			
 	DELAY_MS (10);
-	
+
 		//Display clear
 			*(db->RS.port) &= ~db->RS.pin;
 			*(db->RW.port) &= ~db->RW.pin;
@@ -76,7 +76,8 @@ void initialize (dataBus *db){
 			run (db);
 			
 			DELAY_MS (10);
-};
+			
+};	
 
 void displaySymbol (dataBus *db, volatile uint8_t byte) {
 
