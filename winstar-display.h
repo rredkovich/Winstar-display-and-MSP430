@@ -30,6 +30,7 @@
 	void run (dataBus *db);
 	void initialize (dataBus *db);
 	void displaySymbol (dataBus *db, volatile uint8_t byte);
+	void returnHome (dataBus *db); //Set DDRAM address to 0, returns shifted display to original position
 		
 		
 

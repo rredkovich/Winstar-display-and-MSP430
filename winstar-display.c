@@ -71,8 +71,8 @@ void initialize (dataBus *db){
 			*(db->DB3.port) &= ~db->DB3.pin;
 			*(db->DB2.port) |= db->DB2.pin;
 			*(db->DB1.port) |= db->DB1.pin; 	//russian font
-			*(db->DB0.port) &= ~db->DB0.pin;
-			
+			*(db->DB0.port) &= ~db->DB0.pin;	
+						
 			run (db);
 			
 			DELAY_MS (10);
@@ -136,3 +136,23 @@ void displaySymbol (dataBus *db, volatile uint8_t byte) {
 	DELAY_MS(10);
 
 }
+
+void returnHome (dataBus *db){
+		
+			*(db->RS.port) &= ~db->RS.pin; 	
+			*(db->RW.port) &= ~db->RW.pin;
+			*(db->DB7.port) &= ~db->DB7.pin;
+			*(db->DB6.port) &= ~db->DB6.pin;
+			*(db->DB5.port) &= ~db->DB5.pin;	
+			*(db->DB4.port) &= ~db->DB4.pin;
+			*(db->DB3.port) &= ~db->DB3.pin;
+			*(db->DB2.port) &= ~db->DB2.pin;
+			*(db->DB1.port) |= db->DB1.pin; 	
+			*(db->DB0.port) &= ~db->DB0.pin;	
+			
+			//run command
+			run (db); 
+			
+			DELAY_MS(10);
+		
+	}
