@@ -2,21 +2,11 @@
 
 
 void run (dataBus *db){
+	DELAY_MS(5);
 	*(db->E.port) |= db->E.pin;
-	DELAY_NS (270);
+	DELAY_MS (250);
 	*(db->E.port) &= ~db->E.pin;
-	DELAY_NS(270);
-	//all wires to zero
-	*(db->RS.port) &= ~db->RS.pin; 	
-	*(db->RW.port) &= ~db->RW.pin;
-	*(db->DB7.port) &= ~db->DB7.pin;
-	*(db->DB6.port) &= ~db->DB6.pin;
-	*(db->DB5.port) &= ~db->DB5.pin;	
-	*(db->DB4.port) &= ~db->DB4.pin;
-	*(db->DB3.port) &= ~db->DB3.pin;
-	*(db->DB2.port) &= ~db->DB2.pin;
-	*(db->DB1.port) &= ~db->DB1.pin; 	
-	*(db->DB0.port) &= ~db->DB0.pin;
+	DELAY_MS(5);
 }
 	
 void initialize (dataBus *db){
@@ -24,7 +14,6 @@ void initialize (dataBus *db){
 		//function set
 			*(db->RS.port) &= ~db->RS.pin; 	// эта хрень делает на ноге RS нуль
 			*(db->RW.port) &= ~db->RW.pin;
-			DELAY_NS(30);
 			*(db->DB7.port) &= ~db->DB7.pin;
 			*(db->DB6.port) &= ~db->DB6.pin;
 			*(db->DB5.port) |= db->DB5.pin;	//а эта хрень делает на ноге DB5 единицу
@@ -42,15 +31,14 @@ void initialize (dataBus *db){
 		//Display on/off
 			*(db->RS.port) &= ~db->RS.pin;
 			*(db->RW.port) &= ~db->RW.pin;
-			DELAY_NS(30);
 			*(db->DB7.port) &= ~db->DB7.pin;
 			*(db->DB6.port) &= ~db->DB6.pin;
-			*(db->DB5.port) &= ~db->DB5.pin;	
+			*(db->DB5.port) &= ~db->DB5.pin;	//а эта хрень делает на ноге DB5 единицу
 			*(db->DB4.port) &= ~db->DB4.pin;
 			*(db->DB3.port) |= db->DB3.pin;
 			*(db->DB2.port) |= db->DB2.pin;
-			*(db->DB1.port) &= ~db->DB1.pin; 	//False, cursor -> off
-			*(db->DB0.port) &= ~db->DB0.pin;	//True, cursor -> blinks
+			*(db->DB1.port) |= db->DB1.pin; 	//russian font
+			*(db->DB0.port) &= ~db->DB0.pin;	//True - cursor blinks
 			
 			run (db);
 			
@@ -59,7 +47,6 @@ void initialize (dataBus *db){
 		//Display clear
 			*(db->RS.port) &= ~db->RS.pin;
 			*(db->RW.port) &= ~db->RW.pin;
-			DELAY_NS(30);
 			*(db->DB7.port) &= ~db->DB7.pin;
 			*(db->DB6.port) &= ~db->DB6.pin;
 			*(db->DB5.port) &= ~db->DB5.pin;	//а эта хрень делает на ноге DB5 единицу
@@ -77,7 +64,6 @@ void initialize (dataBus *db){
 		//Entry mode set
 			*(db->RS.port) &= ~db->RS.pin;
 			*(db->RW.port) &= ~db->RW.pin;
-			DELAY_NS(30);
 			*(db->DB7.port) &= ~db->DB7.pin;
 			*(db->DB6.port) &= ~db->DB6.pin;
 			*(db->DB5.port) &= ~db->DB5.pin;	//а эта хрень делает на ноге DB5 единицу
@@ -96,7 +82,6 @@ void displaySymbol (dataBus *db, volatile uint8_t byte) {
 
 	*(db->RS.port) |= db->RS.pin;
 	*(db->RW.port) &= ~db->RW.pin;
-	DELAY_NS(30);
 
 	if (byte & 0x80){
 		*(db->DB7.port) |= db->DB7.pin;
