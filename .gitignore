@@ -10,3 +10,14 @@
 *.lai
 *.la
 *.a
+
+#CCS shit
+*.ccsproject
+*.cdtproject
+*.cdtbuild
+*.project
+*.cmd
+*.ccxml
+*.launches
+*.settings
+Debug
