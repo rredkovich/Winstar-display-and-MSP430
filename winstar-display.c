@@ -22,8 +22,6 @@ void functionSet (dataBus *db){
 	*(db->DB0.port) &= ~db->DB0.pin;	//second bit of character table
 			
     run (db); 
-			
-	//DELAY_MS(10);
 }
 
 void displayOnOff (dataBus *db) {
@@ -39,8 +37,6 @@ void displayOnOff (dataBus *db) {
 	*(db->DB0.port) |= db->DB0.pin;	//cursor blinks / doesn't blinks
 			
 	run (db);
-			
-	//DELAY_MS (10);
 }
 
 void displayClear (dataBus *db){
@@ -56,8 +52,6 @@ void displayClear (dataBus *db){
 	*(db->DB0.port) |= db->DB0.pin;
 			
 	run (db);
-			
-	//DELAY_MS (10);
 }
 
 void entryModeSet (dataBus *db){
@@ -73,8 +67,6 @@ void entryModeSet (dataBus *db){
 	*(db->DB0.port) &= ~db->DB0.pin;	
 						
 	run (db);
-			
-	//DELAY_MS (10);
 }
 	
 void initialize (dataBus *db){ //look at datasheet for initialization algorithm
@@ -139,7 +131,6 @@ void displaySymbolWithCode (dataBus *db, volatile uint8_t byte) { //codes are in
 	}
 
 	run (db);
-	//DELAY_MS(10);
 }
 
 void returnHome (dataBus *db){ //Set DDRAM address to 0, returns shifted display to original position
@@ -156,9 +147,6 @@ void returnHome (dataBus *db){ //Set DDRAM address to 0, returns shifted display
 	*(db->DB0.port) &= ~db->DB0.pin;	
 			
 	run (db); 
-			
-	//DELAY_MS(10);
-	
 	}
 
 void shiftDisplay (dataBus *db) {
@@ -174,6 +162,9 @@ void shiftDisplay (dataBus *db) {
 	*(db->DB0.port) &= ~db->DB0.pin;	
 			
     run (db); 
-			
-	//DELAY_MS(10);
 }
+
+void printSymbol (char symbol){
+	if (symbol == '0') displaySymbolWithCode (&db, 00110000);
+	else if (symbol =='1') displaySymbolWithCode (&db, 00110001);
+	}
