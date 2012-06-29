@@ -57,15 +57,15 @@ int main () {
 
 	initialize (&db);
 	
-	displaySymbol (&db, 0x50); //displaying P
-	displaySymbol (&db, 0x69); //displaying i
- 	displaySymbol (&db, 0x20); //displaying space
- 	displaySymbol (&db, 0x3d); //displaying =
- 	displaySymbol (&db, 0x20); //displaying space
- 	displaySymbol (&db, 0x33); //displaying 3
- 	displaySymbol (&db, 0xd0); //displaying .
- 	displaySymbol (&db, 0x31); //displaying 1
- 	displaySymbol (&db, 0x34); //displaying 4
+	displaySymbolWithCode (&db, 0x50); //displaying P
+	displaySymbolWithCode (&db, 0x69); //displaying i
+ 	displaySymbolWithCode (&db, 0x20); //displaying space
+ 	displaySymbolWithCode (&db, 0x3d); //displaying =
+ 	displaySymbolWithCode (&db, 0x20); //displaying space
+ 	displaySymbolWithCode (&db, 0x33); //displaying 3
+ 	displaySymbolWithCode (&db, 0xd0); //displaying .
+ 	displaySymbolWithCode (&db, 0x31); //displaying 1
+ 	displaySymbolWithCode (&db, 0x34); //displaying 4
 
 	//returnHome(&db); doesn't work as expected
 	//displaySymbol (&db, 0x3d); //displaying =
