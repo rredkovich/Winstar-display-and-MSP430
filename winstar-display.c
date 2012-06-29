@@ -35,8 +35,8 @@ void displayOnOff (dataBus *db) {
 	*(db->DB4.port) &= ~db->DB4.pin;
 	*(db->DB3.port) |= db->DB3.pin;
 	*(db->DB2.port) |= db->DB2.pin;		//display on/off
-	*(db->DB1.port) &= ~db->DB1.pin; 	//cursor on/off
-	*(db->DB0.port) &= ~db->DB0.pin;	//cursor blinks / doesn't blinks
+	*(db->DB1.port) |= db->DB1.pin; 	//cursor on/off
+	*(db->DB0.port) |= db->DB0.pin;	//cursor blinks / doesn't blinks
 			
 	run (db);
 			
