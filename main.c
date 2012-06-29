@@ -15,7 +15,7 @@ int main () {
 	P1DIR = 0xFF; //P1 to out
 	P2DIR = 0xFF; //P2 to out
 	
-	DELAY_MS(20); //wait for power stabilization
+	DELAY_MS(10); //wait for power stabilization
 	
 	dataBus db;
 	
@@ -70,8 +70,9 @@ int main () {
 	//returnHome(&db); doesn't work as expected
 	//displaySymbol (&db, 0x3d); //displaying =
 	
- 	
+ 	//returnHome (&db);
  	//_BIS_SR(LPM0_bits + GIE);
 	while(1){};
+	
 		
 };
