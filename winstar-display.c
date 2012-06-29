@@ -6,7 +6,7 @@ void run (dataBus *db){
 	*(db->E.port) |= db->E.pin;
 	DELAY_US (10);
 	*(db->E.port) &= ~(db->E.pin);
-	DELAY_MS(10)
+	DELAY_MS(10);
 	}
 
 void functionSet (dataBus *db){
