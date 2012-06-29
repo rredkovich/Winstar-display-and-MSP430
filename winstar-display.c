@@ -4,7 +4,7 @@
 void run (dataBus *db){
 	DELAY_MS(50);
 	*(db->E.port) |= db->E.pin;
-	DELAY_US (10);
+	DELAY_US (270);
 	*(db->E.port) &= ~(db->E.pin);
 	//DELAY_MS(20);
 	}
@@ -184,5 +184,26 @@ void printSymbol (dataBus *db, unsigned char symbol){
 	else if (symbol =='D') displaySymbolWithCode(db, 0x44);
 	else if (symbol =='E') displaySymbolWithCode(db, 0x45);
 	else if (symbol =='F') displaySymbolWithCode(db, 0x46);
-
+	else if (symbol =='G') displaySymbolWithCode(db, 0x47);
+	else if (symbol =='H') displaySymbolWithCode(db, 0x48);
+	else if (symbol =='I') displaySymbolWithCode(db, 0x49);
+	else if (symbol =='J') displaySymbolWithCode(db, 0x4A);
+	else if (symbol =='K') displaySymbolWithCode(db, 0x4B);
+	else if (symbol =='L') displaySymbolWithCode(db, 0x4C);
+	else if (symbol =='M') displaySymbolWithCode(db, 0x4D);
+	else if (symbol =='N') displaySymbolWithCode(db, 0x4E);
+	else if (symbol =='O') displaySymbolWithCode(db, 0x4F);
+	else if (symbol =='P') displaySymbolWithCode(db, 0x50);
+	else if (symbol =='Q') displaySymbolWithCode(db, 0x51);
+	else if (symbol =='R') displaySymbolWithCode(db, 0x52);
+	else if (symbol =='S') displaySymbolWithCode(db, 0x53);
+	else if (symbol =='T') displaySymbolWithCode(db, 0x54);
+	else if (symbol =='U') displaySymbolWithCode(db, 0x55);
+	else if (symbol =='V') displaySymbolWithCode(db, 0x56);
+	else if (symbol =='W') displaySymbolWithCode(db, 0x57);
+	else if (symbol =='X') displaySymbolWithCode(db, 0x58);
+	else if (symbol =='Y') displaySymbolWithCode(db, 0x59);
+	else if (symbol =='Z') displaySymbolWithCode(db, 0x5A);
+	else if (symbol =='[') displaySymbolWithCode(db, 0x5B);
+	else if (symbol ==']') displaySymbolWithCode(db, 0x5D);
 	}
