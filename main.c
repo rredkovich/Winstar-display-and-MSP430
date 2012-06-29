@@ -57,6 +57,7 @@ int main () {
 
 	initialize (&db);
 	
+	printSymbol (&db, 'A');
 	displaySymbolWithCode (&db, 0x50); //displaying P
 	displaySymbolWithCode (&db, 0x69); //displaying i
  	displaySymbolWithCode (&db, 0x20); //displaying space
