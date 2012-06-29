@@ -165,24 +165,24 @@ void shiftDisplay (dataBus *db) {
 }
 
 void printSymbol (dataBus *db, unsigned char symbol){
-	if (symbol == '0') displaySymbolWithCode (db, 00110000);
-	else if (symbol =='1') displaySymbolWithCode (db, 00110001);
-	else if (symbol =='2') displaySymbolWithCode(db, 00110010);
-	else if (symbol =='3') displaySymbolWithCode(db, 00110011);
-	else if (symbol =='4') displaySymbolWithCode(db, 00110100);
-	else if (symbol =='5') displaySymbolWithCode(db, 00110101);
-	else if (symbol =='6') displaySymbolWithCode(db, 00110110);
-	else if (symbol =='7') displaySymbolWithCode(db, 00110111);
-	else if (symbol =='8') displaySymbolWithCode(db, 00111000);
-	else if (symbol =='9') displaySymbolWithCode(db, 00111001);
-	else if (symbol =='.') displaySymbolWithCode(db, 00101110);
-	else if (symbol ==',') displaySymbolWithCode(db, 00101100);
+	if (symbol == '0') displaySymbolWithCode (db, 0x30);
+	else if (symbol =='1') displaySymbolWithCode (db, 0x31);
+	else if (symbol =='2') displaySymbolWithCode(db, 0x32);
+	else if (symbol =='3') displaySymbolWithCode(db, 0x33);
+	else if (symbol =='4') displaySymbolWithCode(db, 0x34);
+	else if (symbol =='5') displaySymbolWithCode(db, 0x35);
+	else if (symbol =='6') displaySymbolWithCode(db, 0x36);
+	else if (symbol =='7') displaySymbolWithCode(db, 0x37);
+	else if (symbol =='8') displaySymbolWithCode(db, 0x38);
+	else if (symbol =='9') displaySymbolWithCode(db, 0x39);
+	else if (symbol =='.') displaySymbolWithCode(db, 0x2E);
+	else if (symbol ==',') displaySymbolWithCode(db, 0x2C);
 
-	else if (symbol =='A') displaySymbolWithCode(db, 01000001);
-	else if (symbol =='B') displaySymbolWithCode(db, 01000010);
-	else if (symbol =='C') displaySymbolWithCode(db, 01000011);
-	else if (symbol =='D') displaySymbolWithCode(db, 01000100);
-	else if (symbol =='E') displaySymbolWithCode(db, 01000101);
-	else if (symbol =='F') displaySymbolWithCode(db, 01000110);
+	else if (symbol =='A') displaySymbolWithCode(db, 0x41);
+	else if (symbol =='B') displaySymbolWithCode(db, 0x42);
+	else if (symbol =='C') displaySymbolWithCode(db, 0x43);
+	else if (symbol =='D') displaySymbolWithCode(db, 0x44);
+	else if (symbol =='E') displaySymbolWithCode(db, 0x45);
+	else if (symbol =='F') displaySymbolWithCode(db, 0x46);
 
 	}
