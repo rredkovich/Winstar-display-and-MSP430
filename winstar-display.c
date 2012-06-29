@@ -164,7 +164,7 @@ void shiftDisplay (dataBus *db) {
     run (db); 
 }
 
-void printSymbol (char symbol){
-	if (symbol == '0') displaySymbolWithCode (&db, 00110000);
-	else if (symbol =='1') displaySymbolWithCode (&db, 00110001);
+void printSymbol (dataBus *db, unsigned char symbol){
+	if (symbol == '0') displaySymbolWithCode (db, 00110000);
+	else if (symbol =='1') displaySymbolWithCode (db, 00110001);
 	}

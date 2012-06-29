@@ -34,6 +34,6 @@ void initialize (dataBus *db);
 void displaySymbolWithCode (dataBus *db, volatile uint8_t byte);
 void returnHome (dataBus *db); 
 void shiftDisplay (dataBus *db);
-void printSymbol (char symbol);
+void printSymbol (dataBus *db, unsigned char symbol);
 
 #endif /*WINSTARDISPLAY_H_*/
